@@ -38,9 +38,7 @@ export default {
 
       console.log(Vue)
       //发送请求
-      Vue.http.post('/service/public/upload/file', formData
-        // axios.post('/service/extend/upload/file', {
-      ).then(function (response) {
+      Vue.http.post('/service/extend/upload/file', formData).then(function (response) {
         console.log(response)
         // if (response.statusText == "OK") {
         //   console.log(response.data)

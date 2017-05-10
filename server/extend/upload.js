@@ -2,9 +2,6 @@ var formidable = require('formidable')
 var fs = require('fs') //nodejs的文件处理
 
 var exec = {
-    getAttachment(req) {
-        return null
-    },
     file(req) {
         console.log('save file')
         return new Promise(function(resolve, reject) {
