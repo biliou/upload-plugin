@@ -3,7 +3,7 @@
         <h2>插件 —— 上传文件</h2>
         <div id="uploadBox">
             <input v-show="false" type="file" @change="upload" ref="uploadInput" />
-            <button @click="chooseFile" class="btn btn-default btn-xs">
+            <button @click="chooseFile">
                 <img :src="imgSrc" />
             </button>
         </div>
@@ -37,14 +37,18 @@ export default {
 
             //发送请求
             axios.post('/service/extend/upload/file', formData).then(function (response) {
-                console.log(response)
                 if (response) {
                     console.log("文件hash名 = " + response.data)
+                    that.getImage(response.data)
                 }
             }).catch(function (error) {
                 console.log("error");
                 console.log(error);
             })
+        },
+        getImage(val) {
+            console.log()
+            this.imgSrc = '/service/extend/upload/getAttachment?id=' + val
         }
     }
 }

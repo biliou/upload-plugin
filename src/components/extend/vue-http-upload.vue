@@ -40,6 +40,7 @@ export default {
         if (response.ok) {
           console.log(response)
           console.log("文件hash名 = " +response.body)
+          that.getImage(response.body)
         }
       }).catch(function (error) {
         console.log("error");
