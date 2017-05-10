@@ -15,7 +15,6 @@
 </template>
 
 <script>
-import axios from 'axios'
 import Vue from 'vue'
 
 export default {
@@ -36,13 +35,12 @@ export default {
       var formData = new FormData()
       formData.append('ufile', this.$refs.uploadInput.files[0])
 
-      console.log(Vue)
       //发送请求
       Vue.http.post('/service/extend/upload/file', formData).then(function (response) {
-        console.log(response)
-        // if (response.statusText == "OK") {
-        //   console.log(response.data)
-        // }
+        if (response.ok) {
+          console.log(response)
+          console.log("文件hash名 = " +response.body)
+        }
       }).catch(function (error) {
         console.log("error");
         console.log(error);

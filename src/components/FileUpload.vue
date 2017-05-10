@@ -3,16 +3,16 @@
     <h1>upload file</h1>
     <!--上传图片-->
     <div id="wp" class="upload_warpper">
-      <upload></upload>
+      <vue-upload></vue-upload>
     </div>
   </div>
 </template>
 
 <script>
-import Upload from './extend/upload'
+import VueUpload from './extend/vue-http-upload'
 export default {
   components: {
-    Upload
+    VueUpload
   }
 }
 </script>
