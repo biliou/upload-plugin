@@ -24,14 +24,11 @@ var exec = {
 
                 //每当有一对字段/文件已经接收到，便会触发该事件
                 form.on('file', function(name, file) {
-                    console.log('name:' + name)
-                    console.log('file:' + file)
-
                     fs.rename(file.path, "upload/files/" + file.hash, function(result) {
                         console.log("存入数据库")
-                        console.log(result)
+                        console.log(file.hash)
                         // dealFile(file).then((result) => {
-                          resolve(result)
+                          resolve(file.hash)
                         // })
                     })
                 })
@@ -40,7 +37,7 @@ var exec = {
                     console.log('error' + err)
                 })
                     //该方法会转换请求中所包含的表单数据
-                resolve(form.parse(req))
+                form.parse(req)
             } else {
                 reject("please post")
             }
