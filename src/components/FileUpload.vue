@@ -1,6 +1,7 @@
 <template>
   <div class="hello">
     <h1>upload file</h1>
+    <a href="#/Restful">restful</a>
     <!--上传图片-->
     <div id="wp" class="upload_warpper">
       <axios-upload></axios-upload>
